@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "9d9dacc2-e136-4280-ad6f-b83eff2b35c1",
+		"name": "maplebackend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20739971"
+	},
+	"item": [
+		{
+			"name": "유저회원가입",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"testuser01\",\n  \"password\": \"123456\",\n  \"role\": \"user\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/userRegister",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"userRegister"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "로그인",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"testuser01\",\n  \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/userLogin",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"userLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "회원가입확인",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMDEiLCJzdWIiOiI2ODI1OTVmMzVkZmYyOTYzOWMwZWMzYzUiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzI5NDczNSwiZXhwIjoxNzQ3Mjk4MzM1fQ.PA6vNhARtcopKYZDxMWfIg-3PXXA6xT1GwZRvuLv21I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/me",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "이벤트신규등록",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMDEiLCJzdWIiOiI2ODI1OTM1NzVkZmYyOTYzOWMwZWMzYjciLCJpYXQiOjE3NDcyOTMwMzYsImV4cCI6MTc0NzI5NjYzNn0.NMPGWJ5-MRNGHL3-XqREQcRVnMlWwfsmZQZHor-U3Oc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"testuser01\",\n    \"eventname\": \"사탕이벤트16\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/eventRegistration",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"eventRegistration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "이벤트목록조회",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIwMSIsInN1YiI6IjY4MjU3NjBhYmI4MDFmMWEzZDEwZWYzZCIsImlhdCI6MTc0NzI4NTUyMywiZXhwIjoxNzQ3Mjg5MTIzfQ.Bp0Oeqa8HK40oiATVP9bGYQSbK-jwYNx5pEZJ8c5p1M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"testuser1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/eventSelectList",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"eventSelectList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "이벤트신규 보상등록",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMSIsInN1YiI6IjY4MjU3YWZiY2JmNDhmZWI3ZmVmM2IwMyIsImlhdCI6MTc0NzI4OTM0NywiZXhwIjoxNzQ3MjkyOTQ3fQ.59S6t5FGkDgg4p2_a8aMTkatjCNkZaSyHklwVobbJcw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"testuser1\",\n    \"eventname\": \"사탕이벤트3\",\n    \"compensation\": [\n        {   \n            \"name\":\"보상14\",\n            \"quantity\":\"10\"\n        },\n        {\n            \"name\":\"보상13\",\n            \"quantity\":\"10\"\n        }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/eventCompensation",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"eventCompensation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "사용자이벤트참여",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMDEiLCJzdWIiOiI2ODI1OTVmMzVkZmYyOTYzOWMwZWMzYzUiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzI5NDczNSwiZXhwIjoxNzQ3Mjk4MzM1fQ.PA6vNhARtcopKYZDxMWfIg-3PXXA6xT1GwZRvuLv21I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"username\":\"testuser01\",\n    \"mission\":[{\n        \"missionname\":\"사탕이벤트4\",\n        \"missionstatus\":\"false\",\n        \"valueStatus\":\"6\",\n        \"misssioncondition\":\"해당 몬스터 5마리 퇴치\"\n    }]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/eventUserParticipation",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"eventUserParticipation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "유저미션보상요청",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyMDEiLCJzdWIiOiI2ODI1OTVmMzVkZmYyOTYzOWMwZWMzYzUiLCJyb2xlIjoidXNlciIsImlhdCI6MTc0NzM4MDk1MCwiZXhwIjoxNzQ3Mzg0NTUwfQ.Z7T4D43WdrLI4_fQ0G0lUOjBpkHI_mWOTddyqWPwTqM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/userCompensation",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"userCompensation"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
